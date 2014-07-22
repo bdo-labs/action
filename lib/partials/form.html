@@ -1,0 +1,40 @@
+<form name="actionForm"
+  ng-controller="ActionController as actionCtrl"
+  ng-submit="actionForm.$valid && actionCtrl.update(action)"
+  novalidate>
+
+  <header><h5>{{ isNew ? 'New' : 'Update' }} action</h5></header>
+  <input required type="text" placeholder="Action name" ng-model="action.name">
+  <input type="dateTimeLocal" placeholder="yyyy-MM-ddTHH:mm" ng-model="action.deadline" min="{{now}}" >
+  <br><br>
+  <fieldset>
+    <label>Priority</label>
+    <div class="radio-group">
+      <input class="priority priority-low" ng-model="action.priority" type="radio" value="low">
+      <input class="priority priority-medium" ng-model="action.priority" type="radio" value="medium">
+      <input class="priority priority-high" ng-model="action.priority" type="radio" value="high">
+    </div>
+  </fieldset>
+  <textarea placeholder="Description" ng-model="action.description">
+  </textarea>
+  <flow-init>
+  <flow-drop flow-drag-enter="class='dragging'" flow-drag-leave="class={}" ng-class="class">
+      <flow-file-progress></flow-file-progress>
+      <p ng-hide="$flow.files.length"><i class="fa fa-cloud-upload fa-2x"></i> &nbsp;Drop files here to upload</p>
+      <ul class="Files" ng-show="$flow.files.length">
+        <li ng-repeat="file in $flow.files">
+          <img ng-src="{{extname(file.name)}}" alt="{{extname(file.name)}}"> {{basename(file.name)}}
+        </li>
+      </ul>
+    </flow-drop>
+  </flow-init>
+
+  <footer>
+    <button type="submit">Save &nbsp;<i class="fa fa-save fa-pull-right"></i></button>
+    <button name="delete">Delete &nbsp;<i class="fa fa-trash-o fa-pull-right"></i></button>
+  </footer>
+
+  <h3>{{ actionForm.$valid ? 'Valid' : 'Invalid' }}</h3>
+  <pre><code>{{ action | json }}</code></pre>
+
+</form>

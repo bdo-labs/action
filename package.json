@@ -1,0 +1,35 @@
+{
+  "name": "action",
+  "version": "0.0.1",
+  "description": "CRUD component for actions",
+  "main": "lib/index.js",
+  "style": "lib/styles.css",
+  "repository": "git://github.com/bdo-labs/action.git",
+  "license": "MIT",
+  "atomify": {
+    "css": {
+      "entry": "lib/styles.css"
+    },
+    "js": {
+      "entry": "lib/index.js"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "partialify"
+    ]
+  },
+  "devDependencies": {
+    "atomify": "^3.1.2",
+    "partialify": "^3.1.1",
+    "browserify": "^4.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.2.18",
+    "form-styles": "bdo-labs/form-styles",
+    "placeholder": "bdo-labs/placeholder",
+    "font-awesome": "bdo-labs/font-awesome",
+    "is-empty": "0.0.1",
+    "ng-flow": "bdo-labs/ng-flow"
+  }
+}
