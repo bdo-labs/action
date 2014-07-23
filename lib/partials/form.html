@@ -1,21 +1,21 @@
-<form name="actionForm"
-  ng-controller="ActionController as actionCtrl"
-  ng-submit="actionForm.$valid && actionCtrl.update(action)"
+<form name="taskForm"
+  ng-controller="TaskController as taskCtrl"
+  ng-submit="taskForm.$valid && taskCtrl.update(task)"
   novalidate>
 
-  <header><h5>{{ isNew ? 'New' : 'Update' }} action</h5></header>
-  <input required type="text" placeholder="Action name" ng-model="action.name">
-  <input type="dateTimeLocal" placeholder="yyyy-MM-ddTHH:mm" ng-model="action.deadline" min="{{now}}" >
+  <header><h5>{{ isNew ? 'New' : 'Update' }} task</h5></header>
+  <input required type="text" placeholder="Task name" ng-model="task.name">
+  <input type="dateTimeLocal" placeholder="yyyy-MM-ddTHH:mm" ng-model="task.deadline" min="{{now}}" >
   <br><br>
   <fieldset>
     <label>Priority</label>
     <div class="radio-group">
-      <input class="priority priority-low" ng-model="action.priority" type="radio" value="low">
-      <input class="priority priority-medium" ng-model="action.priority" type="radio" value="medium">
-      <input class="priority priority-high" ng-model="action.priority" type="radio" value="high">
+      <input class="priority priority-low" ng-model="task.priority" type="radio" value="low">
+      <input class="priority priority-medium" ng-model="task.priority" type="radio" value="medium">
+      <input class="priority priority-high" ng-model="task.priority" type="radio" value="high">
     </div>
   </fieldset>
-  <textarea placeholder="Description" ng-model="action.description">
+  <textarea placeholder="Description" ng-model="task.description">
   </textarea>
   <flow-init>
   <flow-drop flow-drag-enter="class='dragging'" flow-drag-leave="class={}" ng-class="class">
@@ -34,7 +34,7 @@
     <button name="delete">Delete &nbsp;<i class="fa fa-trash-o fa-pull-right"></i></button>
   </footer>
 
-  <h3>{{ actionForm.$valid ? 'Valid' : 'Invalid' }}</h3>
-  <pre><code>{{ action | json }}</code></pre>
+  <h3>{{ taskForm.$valid ? 'Valid' : 'Invalid' }}</h3>
+  <pre><code>{{ task | json }}</code></pre>
 
 </form>

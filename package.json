@@ -1,10 +1,10 @@
 {
-  "name": "action",
+  "name": "task-view",
   "version": "0.0.1",
-  "description": "CRUD component for actions",
+  "description": "CRUD component for tasks",
   "main": "lib/index.js",
   "style": "lib/styles.css",
-  "repository": "git://github.com/bdo-labs/action.git",
+  "repository": "git://github.com/bdo-labs/task-view.git",
   "license": "MIT",
   "atomify": {
     "css": {

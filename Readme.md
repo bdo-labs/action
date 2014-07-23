@@ -1,13 +1,13 @@
 
-action
-============
+Task view
+=========
 
-CRUD component for actions
+CRUD component for tasks
 
 
 ## Installation
 
-    $ git clone https://github.com/bdo-labs/action.git
+    $ git clone https://github.com/bdo-labs/task-view.git
 
 
 ## Running tests
@@ -18,7 +18,7 @@ CRUD component for actions
 ## API
 
 ```Javascript
-    var action = require('action');
+    var Task = require('task-view');
 ```
 
 

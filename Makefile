@@ -24,7 +24,7 @@ build: node_modules $(SRC)
 	mkdir -p $@
 	atomify --output $@/$@
 	@echo ""
-	@echo "    action was built!"
+	@echo "    task-view was built!"
 	@echo ""
 
 node_modules: package.json
